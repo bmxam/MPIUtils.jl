@@ -2,7 +2,7 @@ module MPIUtils
 using MPI
 
 """
-Helps MPI print : execute "action" on each processor but one at a time. For instance
+Execute "action" on each processor but one at a time. For instance
 @one_at_a_time display(array).
 
 Involves an MPI.Barrier
