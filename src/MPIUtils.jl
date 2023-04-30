@@ -50,5 +50,10 @@ macro only_proc(action, rank, comm = :(MPI.COMM_WORLD))
     end
 end
 
-export @one_at_a_time, @only_root, @only_proc
+"""
+Println the `msg` on each processor with a tag.
+"""
+pprintln(msg::String, comm = MPI.COMM_WORLD) = println("[$(MPI.Comm_rank(comm))] $msg")
+
+export @one_at_a_time, @only_root, @only_proc, pprintln
 end
